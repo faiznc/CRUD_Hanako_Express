@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 
 <?php
-$link = "http://hanako-express.herokuapp.com/api/animes";
+
+if (isset($_GET['title'])) {
+    $title = $_GET['title'];
+	$url_tambahan = "?title=".$title;
+}
+else{
+	$url_tambahan = "";
+}
+
+$link = "http://hanako-express.herokuapp.com/api/animes".$url_tambahan;
 $read = file_get_contents($link); //WORKING
 ?>
 
@@ -90,6 +99,20 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+ 
+<form method='GET' action='index.php' class='form-vertical'>
+	<div class="form-group">
+		<div class="col-sm-4">
+			<input type="text" name='title' accept-charset="utf-8"  class="form-control" value='<?php if (isset($_GET['title'])) {echo $_GET['title'];}?>' placeholder="Cari Judul Anime">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-2">
+			<button type='submit' class='btn btn-info'>Search</button></a>
+		</div>
+	</div>
+</form>
+<br></br>
   <table class="tabletable-striped table-bordered" style="width:100%" align="center" id="anime_table">
                 
                 <thead >

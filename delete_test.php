@@ -1,8 +1,4 @@
 <?php
-
-$id=$_GET['id'];
-
-<?php
  
 class Curl {
 	
@@ -68,20 +64,8 @@ class Curl {
 $curl = new Curl;
 
 $data_string = '';
-$url = "http://hanako-express.herokuapp.com/api/anime/".$id;
+$url = "http://hanako-express.herokuapp.com/api/anime/5ead2b4f7535fd54056e08dc";
 echo $curl->delete($url, $data_string);
-
-if (empty($curl->delete($url, $data_string))){
-	echo "An error occured";
-	echo "<br>";
-	echo '<a href="javascript:history.go(-1)">Back</a>';
-}
-else{
-	$uri_real =  (parse_url($urlAsli, PHP_URL_PATH));
-
-	header("Location: ".$uri_real."./");
-	exit();
-}
 
 
 ?>

@@ -68,14 +68,14 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <!-- <form method='POST' action='act_edit.php' class='form-horizontal'> -->
   <!-- act_edit.php for testing purposes -->
 
-  <form method='PUT' action='<?php echo ("http://hanako-express.herokuapp.com/api/anime/".$id);?>' class='form-horizontal' id="about">
+  <form method='POST' action='act_edit.php' class='form-horizontal' id="about">
             <!-- EDIT DATA Not implemented yet,PUT just a word without function in this site -->
 
 
                     <div class="form-group">
                         <label class="col-sm-1 control-label">Judul</label>
                         <div class="col-sm-10">
-                            <input type="text" name='type' accept-charset="utf-8"  class="form-control" value="<?php echo $judul;?>" placeholder="Judul Anime">
+                            <input type="text" name='title' accept-charset="utf-8"  class="form-control" value='<?php echo (str_replace("'",'&#39',$judul));?>' placeholder="Judul Anime">
                         </div>
                     </div>
  
@@ -113,6 +113,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 							<a onclick="return confirm('Apakah Anda yakin untuk mengubah data?');"><button type='submit' name='submit' class='btn btn-info' onclick="notif()">Simpan</button></a>
                         </div>
                     </div>
+					
+					<input type="hidden" name='id' accept-charset="utf-8"  class="form-control" value="<?php echo $id;?>">
+					
                 </form>
 
     

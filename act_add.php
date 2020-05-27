@@ -1,9 +1,12 @@
 <?php
+$title=$_POST['title'];
+$type=$_POST['type'];
+$episodes=$_POST['episodes'];
+$status=$_POST['status'];
+$picture=$_POST['picture'];
+$thumbnail=$_POST['thumbnail'];
 
-$id=$_GET['id'];
-
-<?php
- 
+//Try to get data from POST method, to edit data.
 class Curl {
 	
 	public function get($url){
@@ -67,11 +70,12 @@ class Curl {
 
 $curl = new Curl;
 
-$data_string = '';
-$url = "http://hanako-express.herokuapp.com/api/anime/".$id;
-echo $curl->delete($url, $data_string);
+$data_string = '{"title":"'.$title.'","type":"'.$type.'","episodes":"'.$episodes.'","status":"'.$status.'","picture":"'.$picture.'","thumbnail":"'.$thumbnail.'"}';
+$url = "http://hanako-express.herokuapp.com/api/anime/";
+// echo $curl->post($url, $data_string);
 
-if (empty($curl->delete($url, $data_string))){
+
+if (empty($curl->post($url, $data_string))){
 	echo "An error occured";
 	echo "<br>";
 	echo '<a href="javascript:history.go(-1)">Back</a>';
@@ -82,6 +86,5 @@ else{
 	header("Location: ".$uri_real."./");
 	exit();
 }
-
 
 ?>

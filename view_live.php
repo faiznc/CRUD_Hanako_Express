@@ -56,7 +56,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
     <h1 class="w3-jumbo"><?php echo $data["title"];?></h1>
     
-    <img src="<?php echo $data["picture"];?>" alt="boy" class="w3-image" width="992" height="1108">
+    <img src="<?php echo $data["picture"];?>" alt="<?php echo $data["title"];?>" class="w3-image" width="992" height="1108">
   </header>
 
   <!-- About Section -->

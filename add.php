@@ -52,7 +52,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <!-- <form method='POST' action='act_add.php?' class='form-horizontal'> -->
   <!-- act_add.php for testing purposes. The content is same with act_edit.php -->
 
-  <form method='POST' action='http://hanako-express.herokuapp.com/api/anime' class='form-horizontal'>
+  <form method='POST' action='act_add.php' class='form-horizontal'>
             
                     <h2>Tambah Anime</h2>
 
